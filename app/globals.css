@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  /* Aura brand tokens */
+  --aura-ink: #081712;       /* near-black green, deepest depth */
+  --aura-forest: #0E2A20;    /* primary dark green background */
+  --aura-forest-2: #123423;  /* slightly lighter panel green */
+  --aura-lime: #C6FF3D;      /* signature accent */
+  --aura-cream: #F4F3EC;     /* off-white text/background */
+  --aura-sage: #8FA79A;      /* muted secondary text */
+}
+
+@theme inline {
+  --color-ink: var(--aura-ink);
+  --color-forest: var(--aura-forest);
+  --color-forest-2: var(--aura-forest-2);
+  --color-lime: var(--aura-lime);
+  --color-cream: var(--aura-cream);
+  --color-sage: var(--aura-sage);
+  --font-display: "Arial Black", Arial, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--aura-forest);
+  color: var(--aura-cream);
+  font-family: var(--font-body);
+}
+
+/* Angular signature clip - echoes the diagonal cut in the Aura wordmark */
+.aura-cut {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+}
+.aura-cut-sm {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+
+::selection {
+  background: var(--aura-lime);
+  color: var(--aura-ink);
+}
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+}
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -30px) scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,156 @@
+import { CLIENTS } from "../clients/data";
+
+// Groups the client roster into industries, each with a real photo gallery.
+// Industries with no photos yet are simply left out of INDUSTRIES below.
+export const INDUSTRIES = [
+  {
+    slug: "fashion",
+    name: "Fashion & Clothing",
+    tagline: "Brand identity and campaigns for clothing labels and boutiques.",
+    handles: ["avewear", "alles_eg", "revoke_clo", "judz.eg", "locate_egy", "glocal.eg", "soffieta_official", "xdry.store"],
+    gallery: [
+      "/work/fashion/1.jpg",
+      "/work/fashion/2.jpg",
+      "/work/fashion/3.jpg",
+      "/work/fashion/4.jpg",
+      "/work/fashion/5.jpg",
+      "/work/fashion/6.jpg",
+      "/work/fashion/7.jpg",
+      "/work/fashion/8.jpg",
+      "/work/fashion/9.jpg",
+      "/work/fashion/10.jpg",
+      "/work/fashion/11.jpg",
+      "/work/fashion/12.jpg",
+      "/work/fashion/13.jpg",
+      "/work/fashion/14.jpg",
+      "/work/avewear/1.jpg",
+      "/work/alles_eg/1.jpg",
+      "/work/alles_eg/2.jpg",
+      "/work/xdry/1.jpg",
+      "/work/xdry/2.jpg",
+      "/work/xdry/3.jpg",
+      "/work/xdry/4.jpg"
+    ],
+  },
+  {
+    slug: "real-estate",
+    name: "Real Estate",
+    tagline: "Marketing for developments, agencies, and property brands.",
+    handles: ["dk.group_", "mitra.for.realestate", "futurehouseegy"],
+    gallery: [
+      "/work/real-estate/1.jpg",
+      "/work/real-estate/2.jpg",
+      "/work/real-estate/3.jpg",
+      "/work/real-estate/4.jpg",
+      "/work/real-estate/5.jpg",
+      "/work/real-estate/6.jpg",
+      "/work/real-estate/7.jpg",
+      "/work/real-estate/8.jpg",
+      "/work/real-estate/9.jpg",
+      "/work/real-estate/10.jpg",
+      "/work/real-estate/11.jpg",
+      "/work/real-estate/12.jpg",
+      "/work/real-estate/13.jpg",
+      "/work/real-estate/14.jpg",
+      "/work/real-estate/15.jpg",
+      "/work/real-estate/16.jpg",
+      "/work/real-estate/17.jpg",
+      "/work/real-estate/18.jpg",
+      "/work/real-estate/19.jpg",
+      "/work/real-estate/20.jpg",
+      "/work/real-estate/21.jpg",
+      "/work/real-estate/22.jpg",
+      "/work/real-estate/23.jpg",
+      "/work/real-estate/24.jpg",
+      "/work/real-estate/25.jpg"
+    ],
+  },
+  {
+    slug: "food-beverage",
+    name: "Food & Beverage",
+    tagline: "Menu design, campaigns, and content for restaurants and cafes.",
+    handles: ["sahartina.egy", "bayt.azari"],
+    gallery: [
+      "/work/fnb/1.jpg",
+      "/work/fnb/2.jpg",
+      "/work/fnb/3.jpg",
+      "/work/fnb/4.jpg",
+      "/work/fnb/5.jpg",
+      "/work/fnb/6.jpg",
+      "/work/fnb/7.jpg",
+      "/work/fnb/8.jpg",
+      "/work/fnb/9.jpg",
+      "/work/fnb/10.jpg",
+      "/work/fnb/11.jpg",
+      "/work/fnb/12.jpg",
+      "/work/fnb/13.jpg",
+      "/work/fnb/14.jpg",
+      "/work/fnb/15.jpg",
+      "/work/fnb/16.jpg",
+      "/work/fnb/17.jpg",
+      "/work/fnb/18.jpg",
+      "/work/fnb/19.jpg",
+      "/work/fnb/20.jpg",
+      "/work/fnb/21.jpg"
+    ],
+  },
+  {
+    slug: "automotive",
+    name: "Automotive",
+    tagline: "Campaigns for car modification and protection brands.",
+    handles: ["rriiddeex"],
+    gallery: [
+      "/work/automotive/1.jpg",
+      "/work/automotive/2.jpg",
+      "/work/automotive/3.jpg",
+      "/work/automotive/4.jpg",
+      "/work/automotive/5.jpg",
+      "/work/automotive/6.jpg",
+      "/work/automotive/7.jpg",
+      "/work/automotive/8.jpg",
+      "/work/automotive/9.jpg",
+      "/work/automotive/10.jpg",
+      "/work/automotive/11.jpg",
+      "/work/automotive/12.jpg",
+      "/work/automotive/13.jpg",
+      "/work/automotive/14.jpg",
+      "/work/automotive/15.jpg",
+      "/work/automotive/16.jpg",
+      "/work/automotive/17.jpg",
+      "/work/automotive/18.jpg",
+      "/work/automotive/19.jpg",
+      "/work/automotive/20.jpg"
+    ],
+  },
+  {
+    slug: "furniture",
+    name: "Furniture & Home",
+    tagline: "Product-focused campaigns for furniture and home brands.",
+    handles: ["goodfurniture2022", "your.sofa24"],
+    gallery: [
+      "/work/furniture/1.jpg",
+      "/work/furniture/2.jpg",
+      "/work/furniture/3.jpg",
+      "/work/furniture/4.jpg",
+      "/work/furniture/5.jpg"
+    ],
+  },
+  {
+    slug: "beauty-health",
+    name: "Beauty & Health",
+    tagline: "Brand and campaign work for beauty and pharmacy clients.",
+    handles: ["world_ofscent", "oraniapharmacy"],
+    gallery: [
+      "/work/beauty-health/1.jpg",
+      "/work/beauty-health/2.jpg",
+      "/work/beauty-health/3.jpg",
+      "/work/beauty-health/4.jpg"
+    ],
+  },
+];
+
+export function getIndustryClients(industry) {
+  return industry.handles
+    .map((h) => CLIENTS.find((c) => c.handle === h))
+    .filter(Boolean);
+}
